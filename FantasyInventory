@@ -1,0 +1,26 @@
+# inventory.py
+
+def display_inventory(inventory):
+    print("Inventory:")
+    #count all the items in the inventory put together
+    item_total = 0
+    for k, v in inventory.items():
+        #print the inventory 
+        print(str(v) + ' ' + k)
+        item_total += v
+    print("Total number of items: " + str(item_total))
+
+def add_to_inventory(inventory, items):
+    for i in items:
+        inventory[i] = inventory.get(i, 0) + 1
+
+stuff = {'gold coin': 42, 'rope': 1}
+dragon_loot = ['gold coin', 'magic mirror', 'dagger', 'gold coin', 'gold coin', 'ruby']
+
+display_inventory(stuff)
+print()
+print('You defeated the dragon and found some loot!')
+print('adding dragon loot to inventory')
+add_to_inventory(stuff, dragon_loot)
+print()
+display_inventory(stuff)
